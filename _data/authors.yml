@@ -1,15 +1,24 @@
 ## 글 작성자 목록
 ## 글 머리말(front matter)에 author: <아이디> 로 지정하면 글에 이름이 표시됩니다.
 ## 아이디는 영문 소문자로, 사람마다 하나씩 추가하세요.
+## url 은 본인 GitHub 프로필 주소로 채워주세요. (모르면 비워두면 이름만 표시)
 
 jwhan:
   name: 한재원
   url: https://github.com/Jaewon-Han
 
-ejkim:
-  name: 김응주
-  url: https://github.com/dev2
+cwhan:
+  name: 한채원
+  url:
 
 jwsung:
   name: 성종원
-  url: https://github.com/dev3
+  url:
+
+smkim:
+  name: 김세민
+  url:
+
+ejkim:
+  name: 김응주
+  url:

@@ -1,39 +1,68 @@
-# Chirpy Starter
+# SSR Tech Blog
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+블로그: https://ssrinc-tech.github.io
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+## 글 쓰는 법
 
-## Why This Starter Exists
+### 1. 글 파일 만들기
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+`_posts/` 폴더에 파일을 만듭니다. 이름은 **`날짜-영문-제목.md`**
 
-To unlock all features, the following files must be present in your Jekyll site:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+```
+_posts/2026-11-20-spring-boot-mcp-server.md
 ```
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
+### 2. 맨 위에 머리말, 아래에 본문 작성
 
-## Usage
+```markdown
+---
+title: Spring Boot로 MCP 서버 만들기
+date: 2026-11-20 14:00:00 +0900
+categories: [Backend, MCP]
+tags: [spring-boot, mcp]
+author: jwhan
+---
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+## 배경
 
-## Contributing
+본문은 마크다운으로 씁니다.
+```
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+- `author` 는 [`_data/authors.yml`](_data/authors.yml) 의 아이디 (처음이면 본인 추가)
+- `date` 가 미래 시각이면 그때까지 글이 안 보입니다
 
-## License
+### 3. 이미지
 
-This work is published under [MIT][mit] License.
+**① 파일 넣기**: 글 이름과 같은 폴더를 만들고 이미지를 넣습니다.
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+```
+assets/img/posts/2026-11-20-spring-boot-mcp-server/inspector.png
+```
+
+**② 글에서 불러오기**: 이미지가 나올 자리에 한 줄 씁니다.
+
+```markdown
+![Inspector 화면](/assets/img/posts/2026-11-20-spring-boot-mcp-server/inspector.png)
+```
+
+- `[ ]` 안은 이미지 설명, `( )` 안은 이미지 파일 위치
+- 경로는 꼭 **`/assets/`** 로 시작 (앞의 `/` 를 빼면 이미지가 안 뜸)
+- 파일 이름은 영문, 공백 없이
+
+### 4. 올리기
+
+```powershell
+git pull
+git checkout -b post/spring-boot-mcp-server
+git add .
+git commit -m "글: Spring Boot로 MCP 서버 만들기"
+git push -u origin post/spring-boot-mcp-server
+```
+
+GitHub 에서 **Pull Request** 생성 → 리뷰 → **Merge** 하면 1~2분 뒤 블로그에 반영됩니다.
+
+> GitHub 웹에서도 가능: `_posts` → **Add file → Create new file** → 커밋 시 "Create a new branch and start a pull request"
+
+## ⚠️ 주의
+
+공개 저장소입니다. 글과 **스크린샷**에 고객사명, 내부 IP, API 키, 사내 소스코드가 없는지 확인하세요.

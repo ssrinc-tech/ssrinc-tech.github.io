@@ -1,0 +1,15 @@
+## 글 작성자 목록
+## 글 머리말(front matter)에 author: <아이디> 로 지정하면 글에 이름이 표시됩니다.
+## 아이디는 영문 소문자로, 사람마다 하나씩 추가하세요.
+
+jwhan:
+  name: 한재원
+  url: https://github.com/Jaewon-Han
+
+ejkim:
+  name: 김응주
+  url: https://github.com/dev2
+
+jwsung:
+  name: 성종원
+  url: https://github.com/dev3

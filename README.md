@@ -53,16 +53,19 @@ assets/img/posts/2026-11-20-spring-boot-mcp-server/inspector.png
 
 ```powershell
 git pull
-git checkout -b post/spring-boot-mcp-server
 git add .
 git commit -m "글: Spring Boot로 MCP 서버 만들기"
-git push -u origin post/spring-boot-mcp-server
+git push
 ```
 
-GitHub 에서 **Pull Request** 생성 → 리뷰 → **Merge** 하면 1~2분 뒤 블로그에 반영됩니다.
+`main` 에 push 하면 1~2분 뒤 블로그에 반영됩니다. (저장소 **Actions** 탭에서 ✅ 확인)
 
-> GitHub 웹에서도 가능: `_posts` → **Add file → Create new file** → 커밋 시 "Create a new branch and start a pull request"
+> GitHub 웹에서도 가능: `_posts` → **Add file → Create new file** → **Commit changes**
 
-## ⚠️ 주의
+## ⚠️ push 전에 꼭 확인
 
-공개 저장소입니다. 글과 **스크린샷**에 고객사명, 내부 IP, API 키, 사내 소스코드가 없는지 확인하세요.
+push 하는 순간 바로 공개되고, 커밋 이력은 지워도 남습니다. 글과 **스크린샷** 모두 확인하세요.
+
+- [ ] 고객사명, 내부 IP (`192.168.x.x`), 사내 서버 주소가 없다
+- [ ] API 키, 비밀번호, 토큰이 없다
+- [ ] 사내 소스코드를 그대로 붙이지 않았다

@@ -21,4 +21,4 @@ SSR 개발팀의 기술 블로그입니다.
 
 1. `_posts/` 폴더에 `YYYY-MM-DD-영문-제목.md` 파일을 만듭니다.
 2. `.github/POST_TEMPLATE.md` 의 머리말을 복사해서 채웁니다.
-3. 브랜치에서 작업하고 PR(Pull Request)을 올리면, 리뷰 후 `main` 에 머지되는 순간 자동으로 배포됩니다.
+3. `main` 에 push 하면 자동으로 배포됩니다.

@@ -1,10 +1,10 @@
 ---
 title: "AI 코딩 도구를 활용한 팀 협업 1편 — pstack으로 검증 절차 공유하기"
 description: "Claude Code에서 pstack으로 프로젝트의 검증 스킬을 만들고, 팀원이 같은 절차를 쓰고 개선할 수 있도록 Git으로 관리하는 방법을 살펴봅니다."
-date: 2026-11-26 18:00:00 +0900
+date: 2026-11-26 18:44:00 +0900
 categories: [Development, AI]
 tags: [ai-coding, claude-code, pstack, git]
-published: false
+published: true
 author: seminkim
 ---
 

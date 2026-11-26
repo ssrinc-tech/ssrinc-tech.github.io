@@ -287,19 +287,19 @@ public class McpWeatherApplication {
 
 ### 3-2. 연결 확인
 
-Claude Code를 실행하고 `/mcp`를 입력하면 `weather` 서버가 연결됐는지 확인할 수 있습니다.
+`.mcp.json`이 있는 폴더에서 Claude Code를 실행하고 `/mcp`를 입력하면 `weather` 서버가 연결됐는지 확인할 수 있습니다. `.mcp.json`은 그 폴더에서 실행할 때만 적용되니, 다른 폴더에서 실행하면 목록에 보이지 않습니다.
 
-<!-- TODO: /mcp 화면 캡처 (키, 경로가 보이지 않게)
-![/mcp 연결 확인](/assets/img/posts/2026-11-26-spring-boot-mcp-server/mcp-list.png)
--->
+서버를 선택해 도구를 열어 보면, 코드에 적은 `@Tool`과 `@ToolParam`의 설명이 그대로 보입니다. **LLM이 도구를 고를 때 보는 정보가 바로 이것입니다.**
+
+![weather 서버의 도구 상세](/assets/img/posts/2026-11-26-spring-boot-mcp-server/mcp-tool-detail.png)
 
 ### 3-3. 실행해 보기
 
-"서울 날씨 어때?"라고 물어보면 Claude가 `getCurrentWeather` 도구를 호출하고 결과를 바탕으로 답합니다.
+"서울 날씨 어때?"라고 물어보면 Claude가 `weather` 서버의 `getCurrentWeather` 도구를 호출하고, 받은 결과를 표로 정리해 답합니다.
 
-<!-- TODO: "서울 날씨 어때?" 실행 화면 캡처
-![날씨 도구 호출](/assets/img/posts/2026-11-26-spring-boot-mcp-server/weather-call.png)
--->
+![날씨 도구 호출 결과](/assets/img/posts/2026-11-26-spring-boot-mcp-server/weather-call.png)
+
+도구가 돌려준 것은 기온, 습도 같은 데이터뿐인데, "체감 온도는 이보다 낮을 수 있어요"처럼 해석을 덧붙이고 표로 정리한 것은 LLM입니다. 흐름도에서 본 역할 분담(서버는 데이터, LLM은 판단과 답변)이 그대로 드러납니다.
 
 ---
 
